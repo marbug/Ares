@@ -60,7 +60,8 @@ void MainWindow::resizeUiElements() {
 
     statusBarLabel->setText(
         "Size: " + QString::number(mainWindowWidth) + "x" + QString::number(mainWindowHeight) +
-        " (" + QString::number(displaySize.width()) + "x" + QString::number(displaySize.height()) + ") " + osName
+        " (" + QString::number(displaySize.width()) + "x" + QString::number(displaySize.height()) + ") build " +
+        __TIME__ + " " + osName
     );
 
     startButton->setContentsMargins(0, 0, 0, 0);
