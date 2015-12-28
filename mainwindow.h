@@ -18,20 +18,21 @@ class MainWindow : public QMainWindow
 
     private:
 
-        const QString MAIN_WINDOW_TITLE = "Ares";
         const int MAIN_WINDOW_MIN_WIDTH = 240;
         const int MAIN_WINDOW_MIN_HEIGHT = 240;
+        const int MAIN_WINDOW_PARTS = 10;
+        const QString MAIN_WINDOW_TITLE = "Ares";
+
+        const int STATUS_BAR_MIN_HEIGHT = 60;
 
         QPushButton *editButton;
-        bool isPortraitLayout;
         QLabel mainWindowLabel;
         int mainWindowHeight;
         int mainWindowWidth;
         QString osName = "";
         QPushButton *startButton;
-        QLabel *statusBarLabel;
+        QPushButton *statusBarLabel;
 
-        void fixIsPortraitLayout();
         void prepareMainWindow();
         void resizeUiElements();
         void resizeEvent(QResizeEvent *);

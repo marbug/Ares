@@ -21,10 +21,6 @@ MainWindow::~MainWindow()
 
 }
 
-void MainWindow::fixIsPortraitLayout() {
-    isPortraitLayout = (mainWindowHeight >= mainWindowWidth);
-}
-
 void MainWindow::prepareMainWindow() {
     // Qt 4/5 on Ubuntu does place the native menubar correctly so on Linux we revert back to in-window menu bar.
 #ifdef Q_OS_LINUX
@@ -32,14 +28,10 @@ void MainWindow::prepareMainWindow() {
     menuBar()->setNativeMenuBar(false);
 #endif
 
-    QStatusBar *statusBar = new QStatusBar(this);
-    setStatusBar(statusBar);
-
-    statusBarLabel = new QLabel();
-    statusBar->addWidget(statusBarLabel);
-
     startButton = new QPushButton("Start", this);
     editButton = new QPushButton("Edit", this);
+    statusBarLabel = new QPushButton("", this);
+    statusBarLabel->setObjectName("statusBarLabel");
 
     setMinimumWidth(MAIN_WINDOW_MIN_WIDTH);
     setMinimumHeight(MAIN_WINDOW_MIN_HEIGHT);
@@ -55,36 +47,46 @@ void MainWindow::prepareMainWindow() {
 }
 
 void MainWindow::resizeUiElements() {
+    int labelHeight;
+
     QScreen *screen = QApplication::primaryScreen();
     QRect displaySize = screen->virtualGeometry();
 
     statusBarLabel->setText(
         "Size: " + QString::number(mainWindowWidth) + "x" + QString::number(mainWindowHeight) +
-        " (" + QString::number(displaySize.width()) + "x" + QString::number(displaySize.height()) + ") build " +
+        " (" + QString::number(displaySize.width()) + "x" + QString::number(displaySize.height()) + ")\nBuild " +
         __TIME__ + " " + osName
     );
 
     startButton->setContentsMargins(0, 0, 0, 0);
     editButton->setContentsMargins(0, 0, 0, 0);
+    statusBarLabel->setContentsMargins(0, 0, 0, 0);
 
-    if (isPortraitLayout) {
-        int margin = mainWindowWidth / 16;
+    labelHeight = mainWindowWidth / MAIN_WINDOW_PARTS;
+    if (labelHeight < STATUS_BAR_MIN_HEIGHT) {
+        labelHeight = STATUS_BAR_MIN_HEIGHT;
+    }
+
+    if ((mainWindowHeight - labelHeight) >= mainWindowWidth * 3 / 4) {
+        int margin = mainWindowWidth / MAIN_WINDOW_PARTS;
         int buttonWidth = mainWindowWidth - margin * 2;
-        int buttonHeight = (mainWindowHeight - margin * 3) / 2;
+        int buttonHeight = (mainWindowHeight - labelHeight - margin * 3) / 2;
 
-        startButton->setGeometry(QRect(QPoint(margin, margin), QSize(buttonWidth, buttonHeight)));
+        startButton->setGeometry(margin, margin, buttonWidth, buttonHeight);
 
-        editButton->setGeometry(QRect(QPoint(margin, margin * 2 + buttonHeight), QSize(buttonWidth, buttonHeight)));
+        editButton->setGeometry(margin, margin * 2 + buttonHeight, buttonWidth, buttonHeight);
     }
     else {
-        int margin = mainWindowHeight / 16;
-        int buttonWidth = mainWindowWidth / 2 - margin * 3;
-        int buttonHeight = mainWindowHeight - margin * 4;
+        int margin = (mainWindowHeight - labelHeight) / MAIN_WINDOW_PARTS;
+        int buttonWidth = (mainWindowWidth - margin * 3) / 2;
+        int buttonHeight = (mainWindowHeight - labelHeight) - margin * 2;
 
-        startButton->setGeometry(QRect(QPoint(margin * 2, margin * 2), QSize(buttonWidth, buttonHeight)));
+        startButton->setGeometry(margin, margin, buttonWidth, buttonHeight);
 
-        editButton->setGeometry(QRect(QPoint(buttonWidth + margin * 4, margin * 2), QSize(buttonWidth, buttonHeight)));
+        editButton->setGeometry(buttonWidth + margin * 2, margin, buttonWidth, buttonHeight);
     }
+
+    statusBarLabel->setGeometry(0, mainWindowHeight - labelHeight, mainWindowWidth, labelHeight);
 }
 
 void MainWindow::resizeEvent(QResizeEvent *event) {
@@ -93,8 +95,6 @@ void MainWindow::resizeEvent(QResizeEvent *event) {
 
     mainWindowWidth = newSize.width();
     mainWindowHeight = newSize.height();
-
-    fixIsPortraitLayout();
 
     resizeUiElements();
 }

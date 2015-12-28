@@ -1,0 +1,36 @@
+#ifndef STYLESHEET_H
+#define STYLESHEET_H
+
+const QString DEFAULT_STYLE_SHEET = "QMainWindow {"
+                                    "  background-color: black;"
+                                    "  border: 0px;"
+                                    "}"
+                                    "QPushButton#statusBarLabel {"
+                                    "  background-color: #cccccc;"
+                                    "  border-color: #cccccc;"
+                                    "  border-radius: 0px;"
+                                    "  color: #000000;"
+                                    "  margin: 0px;"
+                                    "}"
+                                    "QPushButton {"
+                                    "  background-color: #cccccc;"
+                                    "  border-color: #cccccc;"
+                                    "  border-radius: 10px;"
+                                    "  color: #000000;"
+                                    "  margin: 0px;"
+                                    "}"
+                                    "QPushButton:enabled:hover {"
+                                    "  background-color: #eeeeee;"
+                                    "  border-color: #cccccc;"
+                                    "  border-radius: 10px;"
+                                    "  margin: 0px;"
+                                    "}"
+                                    "QPushButton:focus {"
+                                    "  background-color: #ffffff;"
+                                    "  border-color: #cccccc;"
+                                    "  border-radius: 10px;"
+                                    "  margin: 0px;"
+                                    "}"
+                                    "";
+
+#endif // STYLESHEET_H
