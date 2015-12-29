@@ -1,17 +1,23 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QLabel>
 #include <QMainWindow>
-#include <QPushButton>
 #include <QString>
-#include <string>
+
+#include "mainhelper.h"
+#include "selectactionpage.h"
+
+enum {
+    PAGE_SELECT_ACTION
+};
 
 class MainWindow : public QMainWindow
 {
         Q_OBJECT
 
     public:
+
+        int currentPage = PAGE_SELECT_ACTION;
 
         MainWindow(QWidget *parent = 0);
         ~MainWindow();
@@ -20,22 +26,17 @@ class MainWindow : public QMainWindow
 
         const int MAIN_WINDOW_MIN_WIDTH = 240;
         const int MAIN_WINDOW_MIN_HEIGHT = 240;
-        const int MAIN_WINDOW_PARTS = 10;
         const QString MAIN_WINDOW_TITLE = "Ares";
 
-        const int STATUS_BAR_MIN_HEIGHT = 60;
-
-        QPushButton *editButton;
-        QLabel mainWindowLabel;
-        int mainWindowHeight;
-        int mainWindowWidth;
-        QString osName = "";
-        QPushButton *startButton;
-        QPushButton *statusBarLabel;
+        MainHelper *mainHelper;
 
         void prepareMainWindow();
-        void resizeUiElements();
+
         void resizeEvent(QResizeEvent *);
+        void resizeUiElements();
+
+        SelectActionPage *selectActionPage;
+        void initSelectActionPage();
 };
 
 #endif // MAINWINDOW_H

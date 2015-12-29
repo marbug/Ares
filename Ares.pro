@@ -13,10 +13,14 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    mainhelper.cpp \
+    selectactionpage.cpp
 
 HEADERS  += mainwindow.h \
-    stylesheet.h
+    stylesheet.h \
+    mainhelper.h \
+    selectactionpage.h
 
 CONFIG += mobility
 MOBILITY = 
