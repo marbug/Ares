@@ -11,19 +11,17 @@ class SelectActionPage : public QWidget {
         const int MAIN_WINDOW_PARTS = 10;
         const int STATUS_BAR_MIN_HEIGHT = 60;
 
-        MainHelper *mainHelper;
-
         QPushButton *editButton;
         QPushButton *startButton;
         QPushButton *statusBarLabel;
 
     public:
 
-        SelectActionPage(MainHelper *mainHelper);
+        SelectActionPage();
         ~SelectActionPage();
 
         void prepareUiElements();
-        void resizeUiElements();
+        void resizeUiElements(MainHelper *mainHelper);
 };
 
 #endif // SELECTACTIONPAGE_H

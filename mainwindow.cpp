@@ -49,7 +49,7 @@ void MainWindow::prepareMainWindow() {
 }
 
 void MainWindow::initSelectActionPage() {
-    selectActionPage = new SelectActionPage(mainHelper);
+    selectActionPage = new SelectActionPage();
     selectActionPage->prepareUiElements();
     setCentralWidget(selectActionPage);
 
@@ -61,11 +61,8 @@ void MainWindow::resizeUiElements() {
     switch (currentPage) {
 
         case PAGE_SELECT_ACTION:
-        default:
-            selectActionPage->resizeUiElements();
+            selectActionPage->resizeUiElements(mainHelper);
     }
-
-    selectActionPage->resizeUiElements();
 }
 
 void MainWindow::resizeEvent(QResizeEvent *event) {

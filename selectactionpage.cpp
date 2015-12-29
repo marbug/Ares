@@ -1,8 +1,7 @@
 #include "mainhelper.h"
 #include "selectactionpage.h"
 
-SelectActionPage::SelectActionPage(MainHelper *mainHelper) {
-    this->mainHelper = mainHelper;
+SelectActionPage::SelectActionPage() {
 }
 
 SelectActionPage::~SelectActionPage() {
@@ -17,7 +16,7 @@ void SelectActionPage::prepareUiElements() {
     statusBarLabel->setObjectName("statusBarLabel");
 }
 
-void SelectActionPage::resizeUiElements() {
+void SelectActionPage::resizeUiElements(MainHelper *mainHelper) {
     int mainWindowWidth = mainHelper->mainWindowWidth;
     int mainWindowHeight = mainHelper->mainWindowHeight;
 
