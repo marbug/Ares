@@ -2,7 +2,7 @@
 #define SELECTLANGUAGEPAGE_H
 
 #include "main/helper.h"
-#include <QPushButton>
+#include "page/select/language/button.h"
 
 class SelectLanguagePage : public QWidget {
 
@@ -10,7 +10,7 @@ class SelectLanguagePage : public QWidget {
 
         const int MARGIN_PART = 10;
 
-        QPushButton *languageButtons[MainHelper::NUMBER_OF_SUPPORTED_LANGUAGES];
+        SelectLanguagePageButton *languageButtons[MainHelper::NUMBER_OF_SUPPORTED_LANGUAGES];
 
     public:
 

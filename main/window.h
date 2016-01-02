@@ -8,17 +8,16 @@
 #include "page/select/action.h"
 #include "page/select/language.h"
 
-enum {
-    PAGE_SELECT_ACTION,
-    PAGE_SELECT_LANGUAGE
-};
-
 class MainWindow : public QMainWindow
 {
         Q_OBJECT
 
     public:
 
+        enum {
+            PAGE_SELECT_ACTION,
+            PAGE_SELECT_LANGUAGE
+        };
         int currentPage = PAGE_SELECT_ACTION;
 
         MainWindow(QWidget *parent = 0);

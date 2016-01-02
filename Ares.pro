@@ -16,13 +16,15 @@ SOURCES += main.cpp\
         main/window.cpp \
     main/helper.cpp \
     page/select/action.cpp \
-    page/select/language.cpp
+    page/select/language.cpp \
+    page/select/language/button.cpp
 
 HEADERS  += main/window.h \
     stylesheet.h \
     main/helper.h \
     page/select/action.h \
-    page/select/language.h
+    page/select/language.h \
+    page/select/language/button.h
 
 CONFIG += mobility
 MOBILITY = 
