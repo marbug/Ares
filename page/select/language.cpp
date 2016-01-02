@@ -1,5 +1,5 @@
-#include "mainhelper.h"
-#include "selectlanguagepage.h"
+#include "main/helper.h"
+#include "page/select/language.h"
 
 SelectLanguagePage::SelectLanguagePage() {
 }

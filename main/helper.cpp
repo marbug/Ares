@@ -1,4 +1,4 @@
-#include "mainhelper.h"
+#include "main/helper.h"
 
 MainHelper::MainHelper() {
 

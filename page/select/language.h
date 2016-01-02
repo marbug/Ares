@@ -1,7 +1,7 @@
 #ifndef SELECTLANGUAGEPAGE_H
 #define SELECTLANGUAGEPAGE_H
 
-#include "mainhelper.h"
+#include "main/helper.h"
 #include <QPushButton>
 
 class SelectLanguagePage : public QWidget {

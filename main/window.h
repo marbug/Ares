@@ -4,7 +4,7 @@
 #include <QMainWindow>
 #include <QString>
 
-#include "mainhelper.h"
+#include "main/helper.h"
 #include "selectactionpage.h"
 #include "selectlanguagepage.h"
 

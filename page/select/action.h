@@ -1,7 +1,7 @@
 #ifndef SELECTACTIONPAGE_H
 #define SELECTACTIONPAGE_H
 
-#include "mainhelper.h"
+#include "main/helper.h"
 #include <QPushButton>
 
 class SelectActionPage : public QWidget {
