@@ -10,7 +10,7 @@
 
 #include "main/helper.h"
 #include "main/window.h"
-#include "selectactionpage.h"
+#include "page/select/action.h"
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
 

@@ -5,8 +5,8 @@
 #include <QString>
 
 #include "main/helper.h"
-#include "selectactionpage.h"
-#include "selectlanguagepage.h"
+#include "page/select/action.h"
+#include "page/select/language.h"
 
 enum {
     PAGE_SELECT_ACTION,
