@@ -38,22 +38,31 @@ void MainWindow::prepareMainWindow() {
 
     setWindowTitle(MAIN_WINDOW_TITLE);
 
+    //initSelectActionPage();
+    initSelectLanguagePage();
+
     QScreen *screen = QApplication::primaryScreen();
 
     QRect workareaSize = screen->availableGeometry();
     mainHelper->mainWindowWidth = workareaSize.width();
     mainHelper->mainWindowHeight = workareaSize.height();
     resize(mainHelper->mainWindowWidth, mainHelper->mainWindowHeight);
-
-    initSelectActionPage();
 }
 
 void MainWindow::initSelectActionPage() {
     selectActionPage = new SelectActionPage();
-    selectActionPage->prepareUiElements();
+    selectActionPage->prepareUiElements(mainHelper);
     setCentralWidget(selectActionPage);
 
     currentPage = PAGE_SELECT_ACTION;
+}
+
+void MainWindow::initSelectLanguagePage() {
+    selectLanguagePage = new SelectLanguagePage();
+    selectLanguagePage->prepareUiElements(mainHelper);
+    setCentralWidget(selectLanguagePage);
+
+    currentPage = PAGE_SELECT_LANGUAGE;
 }
 
 void MainWindow::resizeUiElements() {
@@ -62,6 +71,9 @@ void MainWindow::resizeUiElements() {
 
         case PAGE_SELECT_ACTION:
             selectActionPage->resizeUiElements(mainHelper);
+
+        case PAGE_SELECT_LANGUAGE:
+            selectLanguagePage->resizeUiElements(mainHelper);
     }
 }
 

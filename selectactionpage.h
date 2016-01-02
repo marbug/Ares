@@ -20,7 +20,7 @@ class SelectActionPage : public QWidget {
         SelectActionPage();
         ~SelectActionPage();
 
-        void prepareUiElements();
+        void prepareUiElements(MainHelper *mainHelper);
         void resizeUiElements(MainHelper *mainHelper);
 };
 

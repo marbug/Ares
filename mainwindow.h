@@ -6,9 +6,11 @@
 
 #include "mainhelper.h"
 #include "selectactionpage.h"
+#include "selectlanguagepage.h"
 
 enum {
-    PAGE_SELECT_ACTION
+    PAGE_SELECT_ACTION,
+    PAGE_SELECT_LANGUAGE
 };
 
 class MainWindow : public QMainWindow
@@ -37,6 +39,9 @@ class MainWindow : public QMainWindow
 
         SelectActionPage *selectActionPage;
         void initSelectActionPage();
+
+        SelectLanguagePage *selectLanguagePage;
+        void initSelectLanguagePage();
 };
 
 #endif // MAINWINDOW_H

@@ -8,24 +8,26 @@ SelectActionPage::~SelectActionPage() {
 
 }
 
-void SelectActionPage::prepareUiElements() {
+void SelectActionPage::prepareUiElements(MainHelper *mainHelper) {
+
+    setContentsMargins(0, 0, 0, 0);
 
     startButton = new QPushButton("Start", this);
+    startButton->setContentsMargins(0, 0, 0, 0);
+
     editButton = new QPushButton("Edit", this);
+    editButton->setContentsMargins(0, 0, 0, 0);
+
     statusBarLabel = new QPushButton("", this);
     statusBarLabel->setObjectName("statusBarLabel");
+    statusBarLabel->setContentsMargins(0, 0, 0, 0);
 }
 
 void SelectActionPage::resizeUiElements(MainHelper *mainHelper) {
     int mainWindowWidth = mainHelper->mainWindowWidth;
     int mainWindowHeight = mainHelper->mainWindowHeight;
 
-    setContentsMargins(0, 0, 0, 0);
     setGeometry(0, 0, mainWindowWidth, mainWindowHeight);
-
-    startButton->setContentsMargins(0, 0, 0, 0);
-    editButton->setContentsMargins(0, 0, 0, 0);
-    statusBarLabel->setContentsMargins(0, 0, 0, 0);
 
     int labelHeight = mainWindowWidth / MAIN_WINDOW_PARTS;
     if (labelHeight < STATUS_BAR_MIN_HEIGHT) {
