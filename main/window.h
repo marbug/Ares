@@ -14,12 +14,6 @@ class MainWindow : public QMainWindow
 
     public:
 
-        enum {
-            PAGE_SELECT_ACTION,
-            PAGE_SELECT_LANGUAGE
-        };
-        int currentPage = PAGE_SELECT_ACTION;
-
         MainWindow(QWidget *parent = 0);
         ~MainWindow();
 

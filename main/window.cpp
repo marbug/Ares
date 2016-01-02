@@ -14,9 +14,8 @@
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
 
-    currentPage = PAGE_SELECT_ACTION;
-
     mainHelper = new MainHelper();
+    mainHelper->currentPage = MainHelper::PAGE_SELECT_ACTION;
 
     prepareMainWindow();
 }
@@ -54,7 +53,7 @@ void MainWindow::initSelectActionPage() {
     selectActionPage->prepareUiElements(mainHelper);
     setCentralWidget(selectActionPage);
 
-    currentPage = PAGE_SELECT_ACTION;
+    mainHelper->currentPage = MainHelper::PAGE_SELECT_ACTION;
 }
 
 void MainWindow::initSelectLanguagePage() {
@@ -62,17 +61,17 @@ void MainWindow::initSelectLanguagePage() {
     selectLanguagePage->prepareUiElements(mainHelper);
     setCentralWidget(selectLanguagePage);
 
-    currentPage = PAGE_SELECT_LANGUAGE;
+    mainHelper->currentPage = MainHelper::PAGE_SELECT_LANGUAGE;
 }
 
 void MainWindow::resizeUiElements() {
 
-    switch (currentPage) {
+    switch (mainHelper->currentPage) {
 
-        case PAGE_SELECT_ACTION:
+        case MainHelper::PAGE_SELECT_ACTION:
             selectActionPage->resizeUiElements(mainHelper);
 
-        case PAGE_SELECT_LANGUAGE:
+        case MainHelper::PAGE_SELECT_LANGUAGE:
             selectLanguagePage->resizeUiElements(mainHelper);
     }
 }

@@ -13,8 +13,13 @@ class MainHelper {
             SUPPORTED_LANGUAGES_UKRAINIAN,
             NUMBER_OF_SUPPORTED_LANGUAGES
         };
-
         int currentLanguage = SUPPORTED_LANGUAGES_ENGLISH;
+
+        enum {
+            PAGE_SELECT_ACTION,
+            PAGE_SELECT_LANGUAGE
+        };
+        int currentPage = PAGE_SELECT_ACTION;
 
         int displayHeight;
         int displayWidth;
