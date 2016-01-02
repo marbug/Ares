@@ -14,6 +14,14 @@ MainHelper::MainHelper() {
 MainHelper::~MainHelper() {
 }
 
+int MainHelper::getCurrentPage() {
+    return currentPage;
+}
+
+void MainHelper::setCurrentPage(int newValue) {
+    currentPage = newValue;
+}
+
 void MainHelper::initSupportedLanguages() {
     SUPPORTED_LANGUAGES[SUPPORTED_LANGUAGES_ENGLISH] ="English";
     SUPPORTED_LANGUAGES[SUPPORTED_LANGUAGES_RUSSIAN] = "Русский";

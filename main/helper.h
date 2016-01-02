@@ -19,7 +19,6 @@ class MainHelper {
             PAGE_SELECT_ACTION,
             PAGE_SELECT_LANGUAGE
         };
-        int currentPage = PAGE_SELECT_ACTION;
 
         int displayHeight;
         int displayWidth;
@@ -34,7 +33,12 @@ class MainHelper {
         MainHelper();
         ~MainHelper();
 
+        int getCurrentPage();
+        void setCurrentPage(int newValue);
+
     private:
+
+        int currentPage = PAGE_SELECT_ACTION;
 
         void initSupportedLanguages();
 };
