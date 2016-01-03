@@ -16,6 +16,6 @@ SelectLanguagePageButton::~SelectLanguagePageButton() {
 }
 
 void SelectLanguagePageButton::onClick() {
-    this->setText("clicked");
-    //mainHelper->setCurrentPage(MainHelper::PAGE_SELECT_ACTION);
+    mainHelper->setCurrentLanguage(buttonNumber);
+    mainHelper->setCurrentPage(MainHelper::PAGE_SELECT_ACTION);
 }

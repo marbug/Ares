@@ -15,6 +15,11 @@ class SelectActionPage : public QWidget {
         QPushButton *startButton;
         QPushButton *statusBarLabel;
 
+        const char* EDIT_BUTTON_NAMES[MainHelper::NUMBER_OF_SUPPORTED_LANGUAGES];
+        const char* START_BUTTON_NAMES[MainHelper::NUMBER_OF_SUPPORTED_LANGUAGES];
+
+        void initButtonNames();
+
     public:
 
         SelectActionPage();

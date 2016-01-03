@@ -14,6 +14,14 @@ MainHelper::MainHelper() {
 MainHelper::~MainHelper() {
 }
 
+int MainHelper::getCurrentLanguage() {
+    return currentLanguage;
+}
+
+void MainHelper::setCurrentLanguage(int newValue) {
+    currentLanguage = newValue;
+}
+
 int MainHelper::getCurrentPage() {
     return currentPage;
 }
@@ -34,4 +42,8 @@ void MainHelper::initSupportedLanguages() {
 
 void MainHelper::setSubscriber(MainHelperSubscriber* subscriber) {
     this->subscriber = subscriber;
+}
+
+char* MainHelper::translate(char** texts) {
+    return texts[getCurrentLanguage()];
 }

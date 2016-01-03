@@ -14,7 +14,6 @@ class MainHelper {
             SUPPORTED_LANGUAGES_UKRAINIAN,
             NUMBER_OF_SUPPORTED_LANGUAGES
         };
-        int currentLanguage = SUPPORTED_LANGUAGES_ENGLISH;
 
         enum {
             PAGE_SELECT_ACTION,
@@ -34,13 +33,19 @@ class MainHelper {
         MainHelper();
         ~MainHelper();
 
+        int getCurrentLanguage();
+        void setCurrentLanguage(int newValue);
+
         int getCurrentPage();
         void setCurrentPage(int newValue);
 
         void setSubscriber(MainHelperSubscriber* subscriber);
 
+        char* translate(char** texts);
+
     private:
 
+        int currentLanguage = SUPPORTED_LANGUAGES_ENGLISH;
         int currentPage = PAGE_SELECT_ACTION;
 
         void initSupportedLanguages();

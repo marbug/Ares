@@ -1,7 +1,8 @@
-#include "mainHelper.h"
 #include "pageHelper.h"
+#include "mainHelper.h"
+#include "mainHelperSubscriber.h"
 
-PageHelper::PageHelper(QMainWindow* window, MainHelper* mainHelper) {
+PageHelper::PageHelper(QMainWindow* window, MainHelper* mainHelper) : MainHelperSubscriber() {
     this->window = window;
     this->mainHelper = mainHelper;
 
@@ -36,12 +37,14 @@ void PageHelper::resizeUiElements() {
                 initSelectActionPage();
             }
             selectActionPage->resizeUiElements(mainHelper);
+            break;
 
         case MainHelper::PAGE_SELECT_LANGUAGE:
             if (selectLanguagePage == 0) {
                 initSelectLanguagePage();
             }
             selectLanguagePage->resizeUiElements(mainHelper);
+            break;
     }
 }
 

@@ -2,10 +2,21 @@
 #include "page/selectActionPage.h"
 
 SelectActionPage::SelectActionPage() {
+    initButtonNames();
 }
 
 SelectActionPage::~SelectActionPage() {
 
+}
+
+void SelectActionPage::initButtonNames() {
+    EDIT_BUTTON_NAMES[MainHelper::SUPPORTED_LANGUAGES_ENGLISH] ="Edit";
+    EDIT_BUTTON_NAMES[MainHelper::SUPPORTED_LANGUAGES_RUSSIAN] = "Изменить";
+    EDIT_BUTTON_NAMES[MainHelper::SUPPORTED_LANGUAGES_UKRAINIAN] = "Змінити";
+
+    START_BUTTON_NAMES[MainHelper::SUPPORTED_LANGUAGES_ENGLISH] ="Start";
+    START_BUTTON_NAMES[MainHelper::SUPPORTED_LANGUAGES_RUSSIAN] = "Начать";
+    START_BUTTON_NAMES[MainHelper::SUPPORTED_LANGUAGES_UKRAINIAN] = "Почати";
 }
 
 void SelectActionPage::prepareUiElements(MainHelper *mainHelper) {
@@ -33,6 +44,9 @@ void SelectActionPage::resizeUiElements(MainHelper *mainHelper) {
     if (labelHeight < STATUS_BAR_MIN_HEIGHT) {
         labelHeight = STATUS_BAR_MIN_HEIGHT;
     }
+
+    editButton->setText(mainHelper->translate((char**)EDIT_BUTTON_NAMES));
+    startButton->setText(mainHelper->translate((char**)START_BUTTON_NAMES));
 
     if ((mainWindowHeight - labelHeight) >= mainWindowWidth * 3 / 4) {
         int margin = mainWindowWidth / MAIN_WINDOW_PARTS;

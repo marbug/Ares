@@ -8,7 +8,7 @@ class MainHelperSubscriber {
         MainHelperSubscriber();
         ~MainHelperSubscriber();
 
-        void onSetCurrentPage();
+        virtual void onSetCurrentPage();
 
 };
 
