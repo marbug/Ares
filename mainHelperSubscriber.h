@@ -2,13 +2,12 @@
 #define MAIN_HELPER_SUBSCRIBER_H
 
 class MainHelperSubscriber {
+public:
 
-    public:
+    MainHelperSubscriber();
+    ~MainHelperSubscriber();
 
-        MainHelperSubscriber();
-        ~MainHelperSubscriber();
-
-        virtual void onSetCurrentPage();
+    virtual void onSetCurrentPage();
 
 };
 

@@ -5,20 +5,19 @@
 #include "page/selectLanguagePageButton.h"
 
 class SelectLanguagePage : public QWidget {
+private:
 
-    private:
+    const int MARGIN_PART = 10;
 
-        const int MARGIN_PART = 10;
+    SelectLanguagePageButton *languageButtons[MainHelper::NUMBER_OF_SUPPORTED_LANGUAGES];
 
-        SelectLanguagePageButton *languageButtons[MainHelper::NUMBER_OF_SUPPORTED_LANGUAGES];
+public:
 
-    public:
+    SelectLanguagePage();
+    ~SelectLanguagePage();
 
-        SelectLanguagePage();
-        ~SelectLanguagePage();
-
-        void prepareUiElements(MainHelper *mainHelper);
-        void resizeUiElements(MainHelper *mainHelper);
+    void prepareUiElements(MainHelper *mainHelper);
+    void resizeUiElements(MainHelper *mainHelper);
 };
 
 #endif // SELECT_LANGUAGE_PAGE_H

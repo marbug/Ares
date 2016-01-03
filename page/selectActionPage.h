@@ -5,28 +5,27 @@
 #include <QPushButton>
 
 class SelectActionPage : public QWidget {
+private:
 
-    private:
+    const int MAIN_WINDOW_PARTS = 10;
+    const int STATUS_BAR_MIN_HEIGHT = 60;
 
-        const int MAIN_WINDOW_PARTS = 10;
-        const int STATUS_BAR_MIN_HEIGHT = 60;
+    QPushButton *editButton;
+    QPushButton *startButton;
+    QPushButton *statusBarLabel;
 
-        QPushButton *editButton;
-        QPushButton *startButton;
-        QPushButton *statusBarLabel;
+    const char* EDIT_BUTTON_NAMES[MainHelper::NUMBER_OF_SUPPORTED_LANGUAGES];
+    const char* START_BUTTON_NAMES[MainHelper::NUMBER_OF_SUPPORTED_LANGUAGES];
 
-        const char* EDIT_BUTTON_NAMES[MainHelper::NUMBER_OF_SUPPORTED_LANGUAGES];
-        const char* START_BUTTON_NAMES[MainHelper::NUMBER_OF_SUPPORTED_LANGUAGES];
+    void initButtonNames();
 
-        void initButtonNames();
+public:
 
-    public:
+    SelectActionPage();
+    ~SelectActionPage();
 
-        SelectActionPage();
-        ~SelectActionPage();
-
-        void prepareUiElements(MainHelper *mainHelper);
-        void resizeUiElements(MainHelper *mainHelper);
+    void prepareUiElements(MainHelper *mainHelper);
+    void resizeUiElements(MainHelper *mainHelper);
 };
 
 #endif // SELECT_ACTION_PAGE_H

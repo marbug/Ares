@@ -6,18 +6,17 @@
 #include <QWidget>
 
 class SelectLanguagePageButton : public QPushButton {
+private:
 
-    private:
+    int buttonNumber;
+    MainHelper * mainHelper;
 
-        int buttonNumber;
-        MainHelper * mainHelper;
+public:
 
-    public:
+    SelectLanguagePageButton(const QString & text, QWidget * parent, int buttonNumber, MainHelper * mainHelper);
+    ~SelectLanguagePageButton();
 
-        SelectLanguagePageButton(const QString & text, QWidget * parent, int buttonNumber, MainHelper * mainHelper);
-        ~SelectLanguagePageButton();
-
-        void onClick();
+    void onClick();
 };
 
 #endif // SELECT_LANGUAGE_PAGE_BUTTON_H

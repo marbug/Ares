@@ -9,25 +9,25 @@
 
 class MainWindow : public QMainWindow
 {
-        Q_OBJECT
+    Q_OBJECT
 
-    public:
+public:
 
-        MainWindow(QWidget *parent = 0);
-        ~MainWindow();
+    MainWindow(QWidget *parent = 0);
+    ~MainWindow();
 
-    private:
+private:
 
-        const int MAIN_WINDOW_MIN_WIDTH = 240;
-        const int MAIN_WINDOW_MIN_HEIGHT = 240;
-        const QString MAIN_WINDOW_TITLE = "Ares";
+    const int MAIN_WINDOW_MIN_WIDTH = 240;
+    const int MAIN_WINDOW_MIN_HEIGHT = 240;
+    const QString MAIN_WINDOW_TITLE = "Ares";
 
-        MainHelper* mainHelper;
-        PageHelper* pageHelper;
+    MainHelper* mainHelper;
+    PageHelper* pageHelper;
 
-        void prepareMainWindow();
+    void prepareMainWindow();
 
-        void resizeEvent(QResizeEvent *);
+    void resizeEvent(QResizeEvent *);
 };
 
 #endif // MAINWINDOW_H
