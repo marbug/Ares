@@ -33,21 +33,30 @@ void PageHelper::resizeUiElements() {
     switch (mainHelper->getCurrentPage()) {
 
         case MainHelper::PAGE_SELECT_ACTION:
-            if (selectActionPage == 0) {
-                initSelectActionPage();
+            if (selectActionPage != 0) {
+                selectActionPage->resizeUiElements(mainHelper);
             }
-            selectActionPage->resizeUiElements(mainHelper);
             break;
 
         case MainHelper::PAGE_SELECT_LANGUAGE:
-            if (selectLanguagePage == 0) {
-                initSelectLanguagePage();
+            if (selectLanguagePage != 0) {
+                selectLanguagePage->resizeUiElements(mainHelper);
             }
-            selectLanguagePage->resizeUiElements(mainHelper);
             break;
     }
 }
 
 void PageHelper::onSetCurrentPage() {
+    switch (mainHelper->getCurrentPage()) {
+
+        case MainHelper::PAGE_SELECT_ACTION:
+            initSelectActionPage();
+            break;
+
+        case MainHelper::PAGE_SELECT_LANGUAGE:
+            initSelectLanguagePage();
+            break;
+    }
+
     resizeUiElements();
 }

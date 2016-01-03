@@ -19,7 +19,8 @@ SOURCES += main.cpp\
     page/selectLanguagePage.cpp \
     page/selectActionPage.cpp \
     page/selectLanguagePageButton.cpp \
-    mainHelperSubscriber.cpp
+    mainHelperSubscriber.cpp \
+    page/selectActionPageButton.cpp
 
 HEADERS  += \
     stylesheet.h \
@@ -29,7 +30,8 @@ HEADERS  += \
     page/selectLanguagePage.h \
     page/selectActionPage.h \
     page/selectLanguagePageButton.h \
-    mainHelperSubscriber.h
+    mainHelperSubscriber.h \
+    page/selectActionPageButton.h
 
 CONFIG += mobility
 MOBILITY = 

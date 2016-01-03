@@ -1,5 +1,6 @@
 #include "mainHelper.h"
 #include "page/selectActionPage.h"
+#include "page/selectActionPageButton.h"
 
 SelectActionPage::SelectActionPage() {
     initButtonNames();
@@ -10,26 +11,26 @@ SelectActionPage::~SelectActionPage() {
 }
 
 void SelectActionPage::initButtonNames() {
-    EDIT_BUTTON_NAMES[MainHelper::SUPPORTED_LANGUAGES_ENGLISH] ="Edit";
-    EDIT_BUTTON_NAMES[MainHelper::SUPPORTED_LANGUAGES_RUSSIAN] = "Изменить";
-    EDIT_BUTTON_NAMES[MainHelper::SUPPORTED_LANGUAGES_UKRAINIAN] = "Змінити";
+    EDIT_BUTTON_NAMES[MainHelper::SUPPORTED_LANGUAGES_ENGLISH] ="Edit\nsettings";
+    EDIT_BUTTON_NAMES[MainHelper::SUPPORTED_LANGUAGES_RUSSIAN] = "Изменить\nнастройки";
+    EDIT_BUTTON_NAMES[MainHelper::SUPPORTED_LANGUAGES_UKRAINIAN] = "Змінити\nналаштування";
 
-    START_BUTTON_NAMES[MainHelper::SUPPORTED_LANGUAGES_ENGLISH] ="Start";
-    START_BUTTON_NAMES[MainHelper::SUPPORTED_LANGUAGES_RUSSIAN] = "Начать";
-    START_BUTTON_NAMES[MainHelper::SUPPORTED_LANGUAGES_UKRAINIAN] = "Почати";
+    START_BUTTON_NAMES[MainHelper::SUPPORTED_LANGUAGES_ENGLISH] ="Start\nwork";
+    START_BUTTON_NAMES[MainHelper::SUPPORTED_LANGUAGES_RUSSIAN] = "Начать\nработу";
+    START_BUTTON_NAMES[MainHelper::SUPPORTED_LANGUAGES_UKRAINIAN] = "Почати\nроботу";
 }
 
 void SelectActionPage::prepareUiElements(MainHelper *mainHelper) {
 
     setContentsMargins(0, 0, 0, 0);
 
-    startButton = new QPushButton("Start", this);
+    startButton = new SelectActionPageButton("Start", this, MainHelper::PAGE_SELECT_ACTION, mainHelper);
     startButton->setContentsMargins(0, 0, 0, 0);
 
-    editButton = new QPushButton("Edit", this);
+    editButton = new SelectActionPageButton("Edit", this, MainHelper::PAGE_SELECT_ACTION, mainHelper);
     editButton->setContentsMargins(0, 0, 0, 0);
 
-    statusBarLabel = new QPushButton("", this);
+    statusBarLabel = new SelectActionPageButton("", this, MainHelper::PAGE_SELECT_LANGUAGE, mainHelper);
     statusBarLabel->setObjectName("statusBarLabel");
     statusBarLabel->setContentsMargins(0, 0, 0, 0);
 }
