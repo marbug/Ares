@@ -1,5 +1,5 @@
-#include "main/helper.h"
-#include "page/select/language/button.h"
+#include "mainHelper.h"
+#include "page/selectLanguagePageButton.h"
 
 SelectLanguagePageButton::SelectLanguagePageButton(const QString & text, QWidget * parent, int buttonNumber, MainHelper * mainHelper) {
     button = new QPushButton(text, parent);

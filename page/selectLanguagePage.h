@@ -1,8 +1,8 @@
-#ifndef SELECTLANGUAGEPAGE_H
-#define SELECTLANGUAGEPAGE_H
+#ifndef SELECT_LANGUAGE_PAGE_H
+#define SELECT_LANGUAGE_PAGE_H
 
-#include "main/helper.h"
-#include "page/select/language/button.h"
+#include "mainHelper.h"
+#include "page/selectLanguagePageButton.h"
 
 class SelectLanguagePage : public QWidget {
 
@@ -21,4 +21,4 @@ class SelectLanguagePage : public QWidget {
         void resizeUiElements(MainHelper *mainHelper);
 };
 
-#endif // SELECTLANGUAGEPAGE_H
+#endif // SELECT_LANGUAGE_PAGE_H

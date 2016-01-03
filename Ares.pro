@@ -13,18 +13,21 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        main/window.cpp \
-    main/helper.cpp \
-    page/select/action.cpp \
-    page/select/language.cpp \
-    page/select/language/button.cpp
+    pageHelper.cpp \
+    mainHelper.cpp \
+    mainWindow.cpp \
+    page/selectLanguagePage.cpp \
+    page/selectActionPage.cpp \
+    page/selectLanguagePageButton.cpp
 
-HEADERS  += main/window.h \
+HEADERS  += \
     stylesheet.h \
-    main/helper.h \
-    page/select/action.h \
-    page/select/language.h \
-    page/select/language/button.h
+    pageHelper.h \
+    mainHelper.h \
+    mainWindow.h \
+    page/selectLanguagePage.h \
+    page/selectActionPage.h \
+    page/selectLanguagePageButton.h
 
 CONFIG += mobility
 MOBILITY = 

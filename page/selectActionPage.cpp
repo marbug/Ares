@@ -1,5 +1,5 @@
-#include "main/helper.h"
-#include "page/select/action.h"
+#include "mainHelper.h"
+#include "page/selectActionPage.h"
 
 SelectActionPage::SelectActionPage() {
 }

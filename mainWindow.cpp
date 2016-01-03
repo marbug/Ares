@@ -8,9 +8,9 @@
 #include <QStatusBar>
 #include <QVBoxLayout>
 
-#include "main/helper.h"
-#include "main/window.h"
-#include "page/select/action.h"
+#include "mainHelper.h"
+#include "mainWindow.h"
+#include "page/selectActionPage.h"
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
 

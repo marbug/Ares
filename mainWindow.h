@@ -4,9 +4,9 @@
 #include <QMainWindow>
 #include <QString>
 
-#include "main/helper.h"
-#include "page/select/action.h"
-#include "page/select/language.h"
+#include "mainHelper.h"
+#include "page/selectActionPage.h"
+#include "page/selectLanguagePage.h"
 
 class MainWindow : public QMainWindow
 {

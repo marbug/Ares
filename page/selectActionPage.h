@@ -1,7 +1,7 @@
-#ifndef SELECTACTIONPAGE_H
-#define SELECTACTIONPAGE_H
+#ifndef SELECT_ACTION_PAGE_H
+#define SELECT_ACTION_PAGE_H
 
-#include "main/helper.h"
+#include "mainHelper.h"
 #include <QPushButton>
 
 class SelectActionPage : public QWidget {
@@ -24,4 +24,4 @@ class SelectActionPage : public QWidget {
         void resizeUiElements(MainHelper *mainHelper);
 };
 
-#endif // SELECTACTIONPAGE_H
+#endif // SELECT_ACTION_PAGE_H

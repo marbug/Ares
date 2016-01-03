@@ -1,5 +1,5 @@
-#ifndef MAINHELPER_H
-#define MAINHELPER_H
+#ifndef MAIN_HELPER_H
+#define MAIN_HELPER_H
 
 #include <QString>
 
@@ -43,4 +43,4 @@ class MainHelper {
         void initSupportedLanguages();
 };
 
-#endif // MAINHELPER_H
+#endif // MAIN_HELPER_H
