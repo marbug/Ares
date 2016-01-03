@@ -1,11 +1,15 @@
-#include "mainwindow.h"
+#include "mainWindow.h"
+#include "stylesheet.h"
 #include <QApplication>
 
 int main(int argc, char *argv[])
 {
-    QApplication a(argc, argv);
-    MainWindow w;
-    w.show();
+    QApplication app(argc, argv);
 
-    return a.exec();
+    app.setStyleSheet(DEFAULT_STYLE_SHEET);
+
+    MainWindow mw;
+    mw.show();
+
+    return app.exec();
 }
