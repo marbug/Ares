@@ -17,6 +17,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     mainHelper = new MainHelper();
     mainHelper->setCurrentPage(MainHelper::PAGE_SELECT_ACTION);
 
+    pageHelper = new PageHelper(this, mainHelper);
+
     prepareMainWindow();
 }
 
@@ -37,8 +39,8 @@ void MainWindow::prepareMainWindow() {
 
     setWindowTitle(MAIN_WINDOW_TITLE);
 
-    //initSelectActionPage();
-    initSelectLanguagePage();
+    //pageHelper->initSelectActionPage();
+    pageHelper->initSelectLanguagePage();
 
     QScreen *screen = QApplication::primaryScreen();
 
@@ -46,34 +48,6 @@ void MainWindow::prepareMainWindow() {
     mainHelper->mainWindowWidth = workareaSize.width();
     mainHelper->mainWindowHeight = workareaSize.height();
     resize(mainHelper->mainWindowWidth, mainHelper->mainWindowHeight);
-}
-
-void MainWindow::initSelectActionPage() {
-    selectActionPage = new SelectActionPage();
-    selectActionPage->prepareUiElements(mainHelper);
-    setCentralWidget(selectActionPage);
-
-    mainHelper->setCurrentPage(MainHelper::PAGE_SELECT_ACTION);
-}
-
-void MainWindow::initSelectLanguagePage() {
-    selectLanguagePage = new SelectLanguagePage();
-    selectLanguagePage->prepareUiElements(mainHelper);
-    setCentralWidget(selectLanguagePage);
-
-    mainHelper->setCurrentPage(MainHelper::PAGE_SELECT_LANGUAGE);
-}
-
-void MainWindow::resizeUiElements() {
-
-    switch (mainHelper->getCurrentPage()) {
-
-        case MainHelper::PAGE_SELECT_ACTION:
-            selectActionPage->resizeUiElements(mainHelper);
-
-        case MainHelper::PAGE_SELECT_LANGUAGE:
-            selectLanguagePage->resizeUiElements(mainHelper);
-    }
 }
 
 void MainWindow::resizeEvent(QResizeEvent *event) {
@@ -87,5 +61,5 @@ void MainWindow::resizeEvent(QResizeEvent *event) {
     mainHelper->displayWidth = displaySize.width();
     mainHelper->displayHeight = displaySize.height();
 
-    resizeUiElements();
+    pageHelper->resizeUiElements();
 }

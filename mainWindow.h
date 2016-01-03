@@ -5,8 +5,7 @@
 #include <QString>
 
 #include "mainHelper.h"
-#include "page/selectActionPage.h"
-#include "page/selectLanguagePage.h"
+#include "pageHelper.h"
 
 class MainWindow : public QMainWindow
 {
@@ -23,18 +22,12 @@ class MainWindow : public QMainWindow
         const int MAIN_WINDOW_MIN_HEIGHT = 240;
         const QString MAIN_WINDOW_TITLE = "Ares";
 
-        MainHelper *mainHelper;
+        MainHelper* mainHelper;
+        PageHelper* pageHelper;
 
         void prepareMainWindow();
 
         void resizeEvent(QResizeEvent *);
-        void resizeUiElements();
-
-        SelectActionPage *selectActionPage;
-        void initSelectActionPage();
-
-        SelectLanguagePage *selectLanguagePage;
-        void initSelectLanguagePage();
 };
 
 #endif // MAINWINDOW_H
