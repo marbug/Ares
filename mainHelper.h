@@ -2,6 +2,7 @@
 #define MAIN_HELPER_H
 
 #include <QString>
+#include "mainHelperSubscriber.h"
 
 class MainHelper {
 
@@ -36,11 +37,15 @@ class MainHelper {
         int getCurrentPage();
         void setCurrentPage(int newValue);
 
+        void setSubscriber(MainHelperSubscriber* subscriber);
+
     private:
 
         int currentPage = PAGE_SELECT_ACTION;
 
         void initSupportedLanguages();
+
+        MainHelperSubscriber* subscriber = 0;
 };
 
 #endif // MAIN_HELPER_H

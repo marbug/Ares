@@ -6,7 +6,7 @@
 #include "page/selectActionPage.h"
 #include "page/selectLanguagePage.h"
 
-class PageHelper {
+class PageHelper : public MainHelperSubscriber {
 
     public:
 
@@ -15,16 +15,18 @@ class PageHelper {
 
         void resizeUiElements();
 
-        SelectActionPage *selectActionPage;
+        SelectActionPage* selectActionPage = 0;
         void initSelectActionPage();
 
-        SelectLanguagePage *selectLanguagePage;
+        SelectLanguagePage* selectLanguagePage = 0;
         void initSelectLanguagePage();
 
     private:
 
         QMainWindow* window;
         MainHelper* mainHelper;
+
+        void onSetCurrentPage();
 };
 
 #endif // PAGE_HELPER_H

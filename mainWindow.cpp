@@ -15,7 +15,6 @@
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
 
     mainHelper = new MainHelper();
-    mainHelper->setCurrentPage(MainHelper::PAGE_SELECT_ACTION);
 
     pageHelper = new PageHelper(this, mainHelper);
 
@@ -39,8 +38,7 @@ void MainWindow::prepareMainWindow() {
 
     setWindowTitle(MAIN_WINDOW_TITLE);
 
-    //pageHelper->initSelectActionPage();
-    pageHelper->initSelectLanguagePage();
+    mainHelper->setCurrentPage(MainHelper::PAGE_SELECT_LANGUAGE);
 
     QScreen *screen = QApplication::primaryScreen();
 

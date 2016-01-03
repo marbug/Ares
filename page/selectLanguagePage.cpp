@@ -60,7 +60,7 @@ void SelectLanguagePage::resizeUiElements(MainHelper *mainHelper) {
     for (int y = 0; y < buttonsPerColumn; y++) {
         for (int x = 0; x < buttonsPerLine; x++) {
             if (buttonNumber < mainHelper->NUMBER_OF_SUPPORTED_LANGUAGES) {
-                languageButtons[y * buttonsPerLine + x]->button->setGeometry(
+                languageButtons[y * buttonsPerLine + x]->setGeometry(
                     x * buttonWidth + marginX, y * buttonHeight + marginY,
                     buttonWidth - marginX * 2, buttonHeight - marginY * 2
                 );

@@ -20,10 +20,18 @@ int MainHelper::getCurrentPage() {
 
 void MainHelper::setCurrentPage(int newValue) {
     currentPage = newValue;
+
+    if (subscriber != 0) {
+        subscriber->onSetCurrentPage();
+    }
 }
 
 void MainHelper::initSupportedLanguages() {
     SUPPORTED_LANGUAGES[SUPPORTED_LANGUAGES_ENGLISH] ="English";
     SUPPORTED_LANGUAGES[SUPPORTED_LANGUAGES_RUSSIAN] = "Русский";
     SUPPORTED_LANGUAGES[SUPPORTED_LANGUAGES_UKRAINIAN] = "Українська";
+}
+
+void MainHelper::setSubscriber(MainHelperSubscriber* subscriber) {
+    this->subscriber = subscriber;
 }

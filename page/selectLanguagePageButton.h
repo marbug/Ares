@@ -5,7 +5,7 @@
 #include <QPushButton>
 #include <QWidget>
 
-class SelectLanguagePageButton {
+class SelectLanguagePageButton : public QPushButton {
 
     private:
 
@@ -13,8 +13,6 @@ class SelectLanguagePageButton {
         MainHelper * mainHelper;
 
     public:
-
-        QPushButton * button;
 
         SelectLanguagePageButton(const QString & text, QWidget * parent, int buttonNumber, MainHelper * mainHelper);
         ~SelectLanguagePageButton();

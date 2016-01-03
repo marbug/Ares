@@ -1,15 +1,14 @@
 #include "mainHelper.h"
 #include "page/selectLanguagePageButton.h"
 
-SelectLanguagePageButton::SelectLanguagePageButton(const QString & text, QWidget * parent, int buttonNumber, MainHelper * mainHelper) {
-    button = new QPushButton(text, parent);
+SelectLanguagePageButton::SelectLanguagePageButton(const QString & text, QWidget * parent, int buttonNumber, MainHelper * mainHelper) : QPushButton(text, parent) {
 
-    button->setContentsMargins(0, 0, 0, 0);
+    setContentsMargins(0, 0, 0, 0);
 
     this->buttonNumber = buttonNumber;
     this->mainHelper = mainHelper;
 
-    //connect(languageButtons[i], SIGNAL (pressed()),this, SLOT (onClick()));
+    connect(this, &QPushButton::clicked, this, &SelectLanguagePageButton::onClick);
 }
 
 SelectLanguagePageButton::~SelectLanguagePageButton() {
@@ -17,4 +16,6 @@ SelectLanguagePageButton::~SelectLanguagePageButton() {
 }
 
 void SelectLanguagePageButton::onClick() {
+    this->setText("clicked");
+    //mainHelper->setCurrentPage(MainHelper::PAGE_SELECT_ACTION);
 }
