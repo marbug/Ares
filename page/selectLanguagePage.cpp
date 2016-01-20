@@ -50,20 +50,21 @@ void SelectLanguagePage::resizeUiElements(MainHelper *mainHelper) {
         }
     }
 
-    int buttonWidth = mainWindowWidth / buttonsPerLine;
-    int buttonHeight = mainWindowHeight / buttonsPerColumn;
+    int margin = (mainWindowWidth >= mainWindowHeight) ? (mainWindowWidth / buttonsPerLine / MARGIN_PART / 2) : (mainWindowHeight / buttonsPerColumn / MARGIN_PART / 2);
 
-    int marginX = buttonWidth / MARGIN_PART / 2;
-    int marginY = buttonHeight / MARGIN_PART / 2;
+    int buttonWidth = (mainWindowWidth - margin * 2) / buttonsPerLine;
+    int buttonHeight = (mainWindowHeight - margin * 2) / buttonsPerColumn;
 
     int buttonNumber = 0;
-    for (int y = 0; y < buttonsPerColumn; y++) {
-        for (int x = 0; x < buttonsPerLine; x++) {
+    for (int j = 0; j < buttonsPerColumn; j++) {
+        for (int i = 0; i < buttonsPerLine; i++) {
             if (buttonNumber < mainHelper->NUMBER_OF_SUPPORTED_LANGUAGES) {
-                languageButtons[y * buttonsPerLine + x]->setGeometry(
-                    x * buttonWidth + marginX, y * buttonHeight + marginY,
-                    buttonWidth - marginX * 2, buttonHeight - marginY * 2
-                );
+                int buttonX = i * buttonWidth + margin * 2;
+                int buttonY = j * buttonHeight + margin * 2;
+                int buttonW = buttonWidth - margin * 2;
+                int buttonH = buttonHeight - margin * 2;
+
+                languageButtons[j * buttonsPerLine + i]->setGeometry(buttonX, buttonY, buttonW, buttonH);
             }
             buttonNumber++;
         }
