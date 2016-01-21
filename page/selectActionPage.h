@@ -7,7 +7,7 @@
 class SelectActionPage : public QWidget {
 private:
 
-    const int MAIN_WINDOW_PARTS = 10;
+    const int NUMBER_OF_PARTS = 10;
     const int STATUS_BAR_MIN_HEIGHT = 60;
 
     SelectPageButton *editButton;

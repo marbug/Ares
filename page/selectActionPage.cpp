@@ -41,7 +41,7 @@ void SelectActionPage::resizeUiElements(MainHelper *mainHelper) {
 
     setGeometry(0, 0, mainWindowWidth, mainWindowHeight);
 
-    int labelHeight = mainWindowWidth / MAIN_WINDOW_PARTS;
+    int labelHeight = mainWindowWidth / NUMBER_OF_PARTS;
     if (labelHeight < STATUS_BAR_MIN_HEIGHT) {
         labelHeight = STATUS_BAR_MIN_HEIGHT;
     }
@@ -50,7 +50,7 @@ void SelectActionPage::resizeUiElements(MainHelper *mainHelper) {
     startButton->setText(mainHelper->translate((char**)START_BUTTON_NAMES));
 
     if ((mainWindowHeight - labelHeight) >= mainWindowWidth * 3 / 4) {
-        int margin = mainWindowWidth / MAIN_WINDOW_PARTS;
+        int margin = mainWindowWidth / NUMBER_OF_PARTS;
         int buttonWidth = mainWindowWidth - margin * 2;
         int buttonHeight = (mainWindowHeight - labelHeight - margin * 3) / 2;
 
@@ -59,7 +59,7 @@ void SelectActionPage::resizeUiElements(MainHelper *mainHelper) {
         editButton->setGeometry(margin, margin * 2 + buttonHeight, buttonWidth, buttonHeight);
     }
     else {
-        int margin = (mainWindowHeight - labelHeight) / MAIN_WINDOW_PARTS;
+        int margin = (mainWindowHeight - labelHeight) / NUMBER_OF_PARTS;
         int buttonWidth = (mainWindowWidth - margin * 3) / 2;
         int buttonHeight = (mainWindowHeight - labelHeight) - margin * 2;
 

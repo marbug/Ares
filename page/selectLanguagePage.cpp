@@ -50,7 +50,7 @@ void SelectLanguagePage::resizeUiElements(MainHelper *mainHelper) {
         }
     }
 
-    int margin = (mainWindowWidth >= mainWindowHeight) ? (mainWindowWidth / buttonsPerLine / MARGIN_PART / 2) : (mainWindowHeight / buttonsPerColumn / MARGIN_PART / 2);
+    int margin = (mainWindowWidth >= mainWindowHeight) ? (mainWindowWidth / buttonsPerLine / NUMBER_OF_PARTS / 2) : (mainWindowHeight / buttonsPerColumn / NUMBER_OF_PARTS / 2);
 
     int buttonWidth = (mainWindowWidth - margin * 2) / buttonsPerLine;
     int buttonHeight = (mainWindowHeight - margin * 2) / buttonsPerColumn;
