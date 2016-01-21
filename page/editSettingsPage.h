@@ -7,7 +7,7 @@
 class EditSettingsPage : public QWidget {
 private:
 
-    const int NUMBER_OF_PARTS = 10;
+    static const int NUMBER_OF_PARTS = 10;
 
     SelectPageButton *backButton;
 

@@ -3,6 +3,10 @@
 #include "mainHelperSubscriber.h"
 
 PageHelper::PageHelper(QMainWindow* window, MainHelper* mainHelper) : MainHelperSubscriber() {
+    this->editSettingsPage = 0;
+    this->selectActionPage = 0;
+    this->selectLanguagePage = 0;
+
     this->window = window;
     this->mainHelper = mainHelper;
 

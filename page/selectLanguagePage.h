@@ -7,7 +7,7 @@
 class SelectLanguagePage : public QWidget {
 private:
 
-    const int NUMBER_OF_PARTS = 10;
+    static const int NUMBER_OF_PARTS = 10;
 
     SelectLanguagePageButton *languageButtons[MainHelper::NUMBER_OF_SUPPORTED_LANGUAGES];
 

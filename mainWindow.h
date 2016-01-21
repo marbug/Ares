@@ -18,8 +18,8 @@ public:
 
 private:
 
-    const int MAIN_WINDOW_MIN_WIDTH = 240;
-    const int MAIN_WINDOW_MIN_HEIGHT = 240;
+    static const int MAIN_WINDOW_MIN_WIDTH = 240;
+    static const int MAIN_WINDOW_MIN_HEIGHT = 240;
     const QString MAIN_WINDOW_TITLE = "Ares";
 
     MainHelper* mainHelper;

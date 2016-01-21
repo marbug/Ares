@@ -1,10 +1,14 @@
 #include "mainHelper.h"
 
 MainHelper::MainHelper() {
+    this->currentLanguage = SUPPORTED_LANGUAGES_ENGLISH;
+    this->currentPage = PAGE_SELECT_ACTION;
+    this->osName = "";
+    this->subscriber = 0;
 
     // Qt 4/5 on Ubuntu does place the native menubar correctly so on Linux we revert back to in-window menu bar.
 #ifdef Q_OS_LINUX
-    osName = "Linux";
+    this->osName = "Linux";
 #endif
 
     initSupportedLanguages();

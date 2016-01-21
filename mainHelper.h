@@ -26,7 +26,7 @@ public:
     int mainWindowHeight;
     int mainWindowWidth;
 
-    QString osName = "";
+    QString osName;
 
     const char* SUPPORTED_LANGUAGES[NUMBER_OF_SUPPORTED_LANGUAGES];
 
@@ -45,12 +45,12 @@ public:
 
 private:
 
-    int currentLanguage = SUPPORTED_LANGUAGES_ENGLISH;
-    int currentPage = PAGE_SELECT_ACTION;
+    int currentLanguage;
+    int currentPage;
 
     void initSupportedLanguages();
 
-    MainHelperSubscriber* subscriber = 0;
+    MainHelperSubscriber* subscriber;
 };
 
 #endif // MAIN_HELPER_H

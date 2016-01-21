@@ -16,13 +16,13 @@ public:
 
     void resizeUiElements();
 
-    EditSettingsPage* editSettingsPage = 0;
+    EditSettingsPage* editSettingsPage;
     void initEditSettingsPage();
 
-    SelectActionPage* selectActionPage = 0;
+    SelectActionPage* selectActionPage;
     void initSelectActionPage();
 
-    SelectLanguagePage* selectLanguagePage = 0;
+    SelectLanguagePage* selectLanguagePage;
     void initSelectLanguagePage();
 
     virtual void onSetCurrentPage() override;
