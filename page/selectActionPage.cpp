@@ -1,6 +1,6 @@
 #include "mainHelper.h"
 #include "page/selectActionPage.h"
-#include "page/selectActionPageButton.h"
+#include "button/selectPageButton.h"
 
 SelectActionPage::SelectActionPage() {
     initButtonNames();
@@ -24,13 +24,13 @@ void SelectActionPage::prepareUiElements(MainHelper *mainHelper) {
 
     setContentsMargins(0, 0, 0, 0);
 
-    startButton = new SelectActionPageButton("Start", this, MainHelper::PAGE_SELECT_ACTION, mainHelper);
+    startButton = new SelectPageButton("Start", this, MainHelper::PAGE_SELECT_ACTION, mainHelper);
     startButton->setContentsMargins(0, 0, 0, 0);
 
-    editButton = new SelectActionPageButton("Edit", this, MainHelper::PAGE_SELECT_ACTION, mainHelper);
+    editButton = new SelectPageButton("Edit", this, MainHelper::PAGE_SELECT_ACTION, mainHelper);
     editButton->setContentsMargins(0, 0, 0, 0);
 
-    statusBarLabel = new SelectActionPageButton("", this, MainHelper::PAGE_SELECT_LANGUAGE, mainHelper);
+    statusBarLabel = new SelectPageButton("", this, MainHelper::PAGE_SELECT_LANGUAGE, mainHelper);
     statusBarLabel->setObjectName("statusBarLabel");
     statusBarLabel->setContentsMargins(0, 0, 0, 0);
 }

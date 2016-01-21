@@ -5,7 +5,7 @@
 #include <QPushButton>
 #include <QWidget>
 
-class SelectActionPageButton : public QPushButton {
+class SelectPageButton : public QPushButton {
 private:
 
     int newPageNumber;
@@ -13,8 +13,8 @@ private:
 
 public:
 
-    SelectActionPageButton(const QString & text, QWidget * parent, int newPageNumber, MainHelper * mainHelper);
-    ~SelectActionPageButton();
+    SelectPageButton(const QString & text, QWidget * parent, int newPageNumber, MainHelper * mainHelper);
+    ~SelectPageButton();
 
     void onClick();
 };
