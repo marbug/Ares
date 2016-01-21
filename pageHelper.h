@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "mainHelper.h"
 #include "mainHelperSubscriber.h"
+#include "page/editSettingsPage.h"
 #include "page/selectActionPage.h"
 #include "page/selectLanguagePage.h"
 
@@ -14,6 +15,9 @@ public:
     ~PageHelper();
 
     void resizeUiElements();
+
+    EditSettingsPage* editSettingsPage = 0;
+    void initEditSettingsPage();
 
     SelectActionPage* selectActionPage = 0;
     void initSelectActionPage();

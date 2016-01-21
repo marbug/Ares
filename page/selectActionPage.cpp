@@ -27,7 +27,7 @@ void SelectActionPage::prepareUiElements(MainHelper *mainHelper) {
     startButton = new SelectPageButton("Start", this, MainHelper::PAGE_SELECT_ACTION, mainHelper);
     startButton->setContentsMargins(0, 0, 0, 0);
 
-    editButton = new SelectPageButton("Edit", this, MainHelper::PAGE_SELECT_ACTION, mainHelper);
+    editButton = new SelectPageButton("Edit", this, MainHelper::PAGE_EDIT_SETTINGS, mainHelper);
     editButton->setContentsMargins(0, 0, 0, 0);
 
     statusBarLabel = new SelectPageButton("", this, MainHelper::PAGE_SELECT_LANGUAGE, mainHelper);
@@ -67,7 +67,6 @@ void SelectActionPage::resizeUiElements(MainHelper *mainHelper) {
 
         editButton->setGeometry(buttonWidth + margin * 2, margin, buttonWidth, buttonHeight);
     }
-
 
     statusBarLabel->setText(
         "Size: " + QString::number(mainWindowWidth) + "x" + QString::number(mainWindowHeight) +

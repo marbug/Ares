@@ -15,6 +15,7 @@ public:
     };
 
     enum {
+        PAGE_EDIT_SETTINGS,
         PAGE_SELECT_ACTION,
         PAGE_SELECT_LANGUAGE
     };
